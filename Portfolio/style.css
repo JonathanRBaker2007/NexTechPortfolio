@@ -1,0 +1,159 @@
+*{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+  html {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  h1{
+    font-size:50px;
+    font-stretch: expanded;
+  }
+  body{
+    width:100%;
+    background-color: #c7c4c4;
+    display: flex; /* Center the container */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body fills the viewport */
+  }
+  
+  .container {
+    display: flex; /* Align text and image */
+    align-items: center;
+    justify-content: space-around; /* Space between text and image */
+    left:-250px;
+  }
+  
+  .main-title {
+    display: inline-block; /* Ensure the element behaves well with rotation */
+    transform: rotate(0deg); /* Initial rotation angle */
+    animation: rotateText 1s forwards; /* Apply the animation */
+    margin-top:100px;
+    text-wrap: nowrap;
+    position: absolute;
+  }
+  
+  .main-image {
+    display: inline-block;
+    width: 65%; 
+    margin-top: 50px; 
+    margin-left: 75px;
+    left: 35px;
+    animation: hovering 1s infinite;
+  }
+  @keyframes hovering {
+    0%{
+        border: 7px solid white;
+    }
+    25%{
+        border: 3.5px solid white;
+    }
+    50%{
+        border: 1px solid white;
+    }
+    75%{
+        border: 3.5px solid white;
+    }
+    100%{
+        border: 7px solid white;
+    }
+    
+    
+  }
+  
+  /* Adjust the flip animation */
+  .flip-container {
+    perspective: 1000px; /* Perspective for 3D effect */
+    display: inline-block;
+  }
+  
+  .flipper {
+    position: relative;
+    width: 300px; /* Width of the flipper element */
+    height: 200px; /* Height of the flipper element */
+    transition: transform 0.6s; /* Smooth transition */
+    transform-style: preserve-3d;
+  }
+  .flipped {
+    transform: rotateY(180deg);
+  }
+
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back side until it's flipped */
+  }
+  .back{
+    top: -150px;
+  }
+  
+  /* Position the back content correctly */
+  .back {
+    transform: rotateY(180deg);
+  }
+  
+  .back-content {
+    text-align: center;
+    padding: 20px;
+  }
+  @keyframes rotateText {
+    0% {
+        transform: rotate(0deg); /* Start from 0 degrees */
+        opacity: 0; /* Start with 0 opacity */
+    }
+    100% {
+        transform: rotate(-90deg); /* Rotate to 270 degrees */
+        opacity: 1; /* Fully fade in */
+    }
+  }
+
+
+.hidden-content {
+    display: none; /* Hide the main content */
+  }
+
+  /* CSS */
+  .card {
+    background-color: #c2fbd7;
+    border-radius: 100px;
+    box-shadow: rgba(148, 148, 148, 0.35) 0 -25px 18px -14px inset,rgba(148, 148, 148, 0.35) 0 1px 2px,rgba(148, 148, 148, 0.35) 0 2px 4px,rgba(148, 148, 148, 0.35) 0 4px 8px,rgba(148, 148, 148, 0.35) 0 8px 16px,rgba(148, 148, 148, 0.35) 0 16px 32px;
+    color: #686969;
+    cursor: pointer;
+    display: inline-block;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .card:hover {
+    box-shadow: rgba(64, 64, 65, 0.35) 0 -25px 18px -14px inset,rgba(64, 64, 65, 0.35) 0 1px 2px,rgba(64, 64, 65, 0.35) 0 2px 4px,rgba(64, 64, 65, 0.35) 0 4px 8px,rgba(64, 64, 65, 0.35) 0 8px 16px,rgba(64, 64, 65, 0.35) 0 16px 32px;
+    transform: scale(1.05) rotate(0.5deg);
+  }
+
+  .white-card{
+    width:800px;
+    height: 600px;
+    background-color: #b5b4b4;
+    display: none;
+  }
+
+.below-container {
+    position: relative; 
+    top:40px;
+  }
+.cardDiv{
+    position: absolute;
+    margin-top: -620px;
+}

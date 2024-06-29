@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio - Jonathan Baker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="background-image"></div>
+<header id="home"class="hero">
+    <div class="hero-content">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Explore my work and get in touch!</p>
+    </div>
+</header>
+<nav id="navbar123"class="navbar123">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+<section id="about" class="section">
+    <!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="img1.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="img2.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="img3.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+    
+    
+    <!--  -->
+    <div class="cards">
+        <div class="card" style="width: 18rem;">
+            <img src="img/IMG_6808.JPG" class="card-img-top" alt="...">
+            <div class="card-body">
+            <p class="card-text">I am 17 years old and I am going into my Senior year at Castle High School. I enjoy spending time with my family and my girlfriend. Some of my hobbies include playing basketball or golf, spending time with family, and video games.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="img/IMG_3680.JPEG" class="card-img-top" alt="...">
+            <div class="card-body">
+            <p class="card-text">I have always loved sports. I love to play and watch them. My favorite NFL team is the Seattle Seahawks and my favorite NBA team is the Miami Heat.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="img/IMG_7987.HEIC" class="card-img-top" alt="...">
+            <div class="card-body">
+            <p class="card-text">I have always loved sports. I love to play and watch them. My favorite NFL team is the Seattle Seahawks and my favorite NBA team is the Miami Heat.</p>
+            </div>
+        </div>
+      </div>
+</section>
+<section id="portfolio" class="section">
+    <iframe src=""></iframe>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="col-md-8 offset-md-2 contact-form-holder mt-4" data-aos="fade-up">
+        <form method="post" name="contact-us" action="">
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone">
+                </div>
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" id="websiteUrl" name="websiteUrl" placeholder="Website">
+                </div>
+                <div class="col-md-12 form-group">
+                    <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message ..."></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-primary btn-shadow btn-lg" type="submit" name="submit">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<script id="oneai-snippet" src="https://oneai.com/~widget?id=bob-2216"></script>
+</body>
+<script defer src="script.js"></script>
+</html>
