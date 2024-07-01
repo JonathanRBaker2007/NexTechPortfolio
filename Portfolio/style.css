@@ -21,16 +21,121 @@
     align-items: center;
     min-height: 100vh; /* Ensure the body fills the viewport */
   }
+  .loading-screen{
+    background-color: #000000fb;
+    display:block;
+    position: absolute;
+    z-index: 9999;
+    width:100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+  }
+  .images{
+    display:block;
+    position: absolute;
+    width:1928px;
+    height: 1080px;
+    top: 0;
+    left: 0;
+    opacity: 60%;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position-x: center;
+
+    background-position-y: center;
+    animation: load 3s linear infinite;
+    animation-timing-function: steps(1);
+  }
+  @keyframes load {
+    
+    
+    0%{
+      background-image: url('src/IMG_6808.JPG');
+      
+    }
+    12.5%{
+      background-image: url('src/IMG_8020.JPG');
+    }
+    
+    25%{
+      background-image: url('src/IMG_8125.JPG');
+    }
+    37.5%{
+      background-image: url('src/IMG_8181.jpg');
+    }
+    50%{
+      background-image: url('src/IMG_8127.JPG');
+    }
+    62.5%{
+      background-image: url('src/IMG_4547.jpeg');
+    }
+    
+    75%{
+      background-image: url('src/IMG_8130.JPG');
+    }
+    87.5%{
+      background-image: url('src/IMG_8131.JPG');
+    }
+    100%{
+      background-image: url('src/IMG_8132.JPG');
+    }
+    
+  }
+  .loader {
+    border: 16px solid #525252; 
+    border-top: 16px solid #afafaf; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 4s forwards;
+    position: absolute;
+    display: block;
+    top: 48%;
+    left: 48%;
+  }
+  .play {
+    width: 0;
+    height: 0;
+    border: solid 18px;
+    transform: rotate(90deg);
+    border-color: transparent transparent #afafaf;
+    position: absolute;
+    top: 50.5%;
+    left: 50.125%;
+    display: block;
+    opacity: 0%;
+    animation: tri 4.5s forwards;
+}
+
+.play:hover{
+  border-color: transparent transparent #e7e7e7;
   
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);
+      border: 16px solid #afafaf;
+      
+     }
+}
+@keyframes tri {
+  0% { opacity: 0%; }
+  66% { opacity: 0%; }
+  100% { opacity: 100%; }
+}
+
   .container {
     display: flex; /* Align text and image */
     align-items: center;
-    justify-content: space-around; /* Space between text and image */
+    justify-content: space-evenly; /* Space between text and image */
     left:-250px;
   }
   
   .main-title {
-    display: inline-block; /* Ensure the element behaves well with rotation */
+    display: inline-block; 
     transform: rotate(0deg); /* Initial rotation angle */
     animation: rotateText 1s forwards; /* Apply the animation */
     margin-top:100px;
@@ -40,30 +145,32 @@
   
   .main-image {
     display: inline-block;
-    width: 65%; 
+    width: 25%; 
     margin-top: 50px; 
-    margin-left: 75px;
-    left: 35px;
+    margin-left: -175px;
     animation: hovering 1s infinite;
   }
   @keyframes hovering {
     0%{
-        border: 7px solid white;
+      box-shadow: 0px 0px 5px black;
     }
     25%{
-        border: 3.5px solid white;
+      box-shadow: 0px 0px 12.5px black;
     }
     50%{
-        border: 1px solid white;
+      box-shadow:0px 0px 25px black;
     }
     75%{
-        border: 3.5px solid white;
+      box-shadow: 0px 0px 12.5px black;
     }
     100%{
-        border: 7px solid white;
+      box-shadow: 0px 0px 5px black;
     }
     
     
+  }
+  .main-image:hover{
+    width: 25.25%;
   }
   
   /* Adjust the flip animation */
@@ -156,4 +263,75 @@
 .cardDiv{
     position: absolute;
     margin-top: -620px;
+}
+.rightAB {
+  width: 0;
+  height: 0;
+  border: solid 16px;
+  transform: rotate(90deg);
+  border-color: transparent transparent #525252;
+  position: absolute;
+  top: 50%;
+  left: 96%;
+  display: none;
+}
+.leftAB {
+  width: 0;
+  height: 0;
+  border: solid 16px;
+  transform: rotate(-90deg);
+  border-color: transparent transparent #525252;
+  position: absolute;
+  top: 50%;
+  display: none;
+}
+.rightPR {
+  width: 0;
+  height: 0;
+  border: solid 16px;
+  transform: rotate(90deg);
+  border-color: transparent transparent #525252;
+  position: absolute;
+  top: 50%;
+  left: 96%;
+  display: none;
+}
+.leftPR {
+  width: 0;
+  height: 0;
+  border: solid 16px;
+  transform: rotate(-90deg);
+  border-color: transparent transparent #525252;
+  position: absolute;
+  top: 50%;
+  display: none;
+}
+.leftAB:hover,.rightAB:hover,.rightPR:hover,.leftPR:hover{
+  border: solid 17px;
+  border-color: transparent transparent #686969;
+}
+.head{
+  position: absolute;
+  display: none;
+  font-size: 32px;
+  color:#363636;
+  top: 10%;
+  left: 12.5%;
+}
+.desc{
+  font-size: 20px;
+  color:#413939;
+  text-wrap:wrap;
+  position: absolute;
+  display: none;
+  top: 30%;
+  left: 12.5%;
+  width: 37.5%;
+}
+.smallIMG{
+  top: 15%;
+  left: 52%;
+  width: 37.5%;
+  position: absolute;
+  display: none;
 }
