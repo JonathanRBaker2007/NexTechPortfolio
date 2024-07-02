@@ -92,8 +92,8 @@
     animation: spin 4s forwards;
     position: absolute;
     display: block;
-    top: 48%;
-    left: 48%;
+    top: 46%;
+    left: 46%;
   }
   .play {
     width: 0;
@@ -102,8 +102,8 @@
     transform: rotate(90deg);
     border-color: transparent transparent #afafaf;
     position: absolute;
-    top: 52%;
-    left: 50.5%;
+    top: 49.5%;
+    left: 48.5%;
     display: block;
     opacity: 0%;
     animation: tri 4.5s forwards;
@@ -262,6 +262,7 @@
     height: 600px;
     background-color: #b5b4b4;
     display: none;
+    border-radius: 10px;
   }
 
 .below-container {
