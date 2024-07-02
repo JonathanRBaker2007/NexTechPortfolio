@@ -15,7 +15,7 @@
   }
   body{
     width:100%;
-    background-color: #c7c4c4;
+    background-color: #9caf99;
     display: flex; /* Center the container */
     justify-content: center;
     align-items: center;
@@ -26,8 +26,8 @@
     display:block;
     position: absolute;
     z-index: 9999;
-    width:100%;
-    height: 100%;
+    width:105%;
+    height: 105%;
     top: 0;
     left: 0;
     
@@ -35,17 +35,17 @@
   .images{
     display:block;
     position: absolute;
-    width:1928px;
-    height: 1080px;
+    width:100%;
+    height: 100%;
     top: 0;
     left: 0;
-    opacity: 60%;
+    opacity: 40%;
     background-repeat: no-repeat;
     background-size:contain;
     background-position-x: center;
 
     background-position-y: center;
-    animation: load 3s linear infinite;
+    animation: load 2s linear infinite;
     animation-timing-function: steps(1);
   }
   @keyframes load {
@@ -102,8 +102,8 @@
     transform: rotate(90deg);
     border-color: transparent transparent #afafaf;
     position: absolute;
-    top: 50.5%;
-    left: 50.125%;
+    top: 52%;
+    left: 50.5%;
     display: block;
     opacity: 0%;
     animation: tri 4.5s forwards;
@@ -171,6 +171,7 @@
   }
   .main-image:hover{
     width: 25.25%;
+    animation-play-state: paused;
   }
   
   /* Adjust the flip animation */
@@ -243,11 +244,18 @@
     -webkit-user-select: none;
     touch-action: manipulation;
   }
-  
+  .active{
+    box-shadow: rgba(64, 64, 65, 0.35) 0 -25px 18px -14px inset,rgba(155, 192, 149, 0.85) 0 1px 2px,rgba(155, 192, 149, 0.85) 0 2px 4px,rgba(155, 192, 149, 0.85) 0 4px 8px,rgba(155, 192, 149, 0.85) 0 8px 16px,rgba(64, 64, 65, 0.35) 0 16px 32px;
+  }
   .card:hover {
     box-shadow: rgba(64, 64, 65, 0.35) 0 -25px 18px -14px inset,rgba(64, 64, 65, 0.35) 0 1px 2px,rgba(64, 64, 65, 0.35) 0 2px 4px,rgba(64, 64, 65, 0.35) 0 4px 8px,rgba(64, 64, 65, 0.35) 0 8px 16px,rgba(64, 64, 65, 0.35) 0 16px 32px;
     transform: scale(1.05) rotate(0.5deg);
   }
+  .active:hover{
+    box-shadow: rgba(64, 64, 65, 0.35) 0 -25px 18px -14px inset,rgba(155, 192, 149, 0.85) 0 1px 2px,rgba(155, 192, 149, 0.85) 0 2px 4px,rgba(155, 192, 149, 0.85) 0 4px 8px,rgba(155, 192, 149, 0.85) 0 8px 16px,rgba(64, 64, 65, 0.35) 0 16px 32px;
+  }
+  
+  
 
   .white-card{
     width:800px;
@@ -329,9 +337,10 @@
   width: 37.5%;
 }
 .smallIMG{
-  top: 15%;
+  top: 20%;
   left: 52%;
   width: 37.5%;
   position: absolute;
   display: none;
 }
+

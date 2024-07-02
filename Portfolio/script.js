@@ -17,8 +17,24 @@ let desc = document.querySelector('.desc');
 let smIMG = document.querySelector('.smallIMG')
 let aboutClass = 'about1';
 let projectsClass = 'projects1';
+let body = document.querySelector('body');
+let contact = document.querySelector('.contact')
+
 // Keep the event listener attached permanently
 mainImage.addEventListener('click', () => {
+  body.style.backgroundColor='#b5b4b4'
+  whiteCard.style.backgroundColor='#9caf99';
+  whiteCard.style.display='block';
+  cardDiv.setAttribute("id", "about1");
+  head.style.display="block";
+    desc.style.display="block";
+    smIMG.style.display="block"
+    head.innerHTML="JONATHAN BAKER";
+    desc.innerHTML='I am 17 years old and I am currently going into my senior year at Castle High School. I love golf, basketball, and football. I also love programming and my favorite languages include<br>  - Python<br>  - JavaScript<br>  - C++';
+    smIMG.src='src/IMG_2449.jpg'
+    leftAboutBTN.style.display="block";
+  rightAboutBTN.style.display="block";
+
   tour();
 
 });
@@ -43,17 +59,17 @@ rightAboutBTN.addEventListener('click',()=>{
   cardDiv.setAttribute("id", "about"+abI);
   console.log(cardDiv.id)
   if (cardDiv.id==='about1'){
-    head.innerHTML="Jonathan Baker";
-    desc.innerHTML='I am 17 years old and I am currently going into my senior year at Castle High School. I love programming and my favorite languages include<br>  - Python<br>  - JavaScript<br>  - C++';
-    smIMG.src='src/IMG_5627.JPEG'
+    head.innerHTML="JONATHAN BAKER";
+    desc.innerHTML='I am 17 years old and I am currently going into my senior year at Castle High School. I love golf, basketball, and football. I also love programming and my favorite languages include<br>  - Python<br>  - JavaScript<br>  - C++';
+    smIMG.src='src/IMG_2449.jpg'
   }else if (cardDiv.id==='about2'){
-    head.innerHTML="";
-    desc.innerHTML='';
-    smIMG.src=''
+    head.innerHTML="INSPIRATION";
+    desc.innerHTML='I have grown to love computers and how they work. It all started when I was 6 years old and me and my brother got an Xbox 360. We were so excited and played it all the time. Through the years I knew I wanted to do something with math and computers. That is when I found out Castle had a CS 1 program and I fell in love with it immediately and knew that was my future.';
+    smIMG.src='src/IMG_8210.JPG'
   }else if (cardDiv.id==='about3'){
-    head.innerHTML="";
-    desc.innerHTML='';
-    smIMG.src=''
+    head.innerHTML="FAMILY";
+    desc.innerHTML='My family have inspired me and pushed me to be the best I can be throughout my life. Whether it was supporting my dreams to pushing me in baskebtall they have always been there and will continue to be. My family has been the biggest support system in my life and I truly would not be here without them.';
+    smIMG.src='src/IMG_8212.JPG'
   }
   return aboutClass
 })
@@ -65,17 +81,17 @@ leftAboutBTN.addEventListener('click',()=>{
   cardDiv.setAttribute("id", "about"+abI);
   console.log(cardDiv.id)
   if (cardDiv.id==='about1'){
-    head.innerHTML="Jonathan Baker";
-    desc.innerHTML='I am 17 years old and I am currently going into my senior year at Castle High School. I love programming and my favorite languages include<br>  - Python<br>  - JavaScript<br>  - C++';
-    smIMG.src='src/IMG_5627.JPEG'
+    head.innerHTML="JONATHAN BAKER";
+    desc.innerHTML='I am 17 years old and I am currently going into my senior year at Castle High School. I love golf, basketball, and football. I also love programming and my favorite languages include<br>  - Python<br>  - JavaScript<br>  - C++';
+    smIMG.src='src/IMG_2449.jpg'
   }else if (cardDiv.id==='about2'){
-    head.innerHTML="";
-    desc.innerHTML='';
-    smIMG.src=''
+    head.innerHTML="INSPIRATION";
+    desc.innerHTML='I have grown to love computers and how they work. It all started when I was 6 years old and me and my brother got an Xbox 360. We were so excited and played it all the time. Through the years I knew I wanted to do something with math and computers. That is when I found out Castle had a CS 1 program and I fell in love with it immediately and knew that was my future.';
+    smIMG.src='src/IMG_8210.JPG'
   }else if (cardDiv.id==='about3'){
-    head.innerHTML="";
-    desc.innerHTML='';
-    smIMG.src=''
+    head.innerHTML="FAMILY";
+    desc.innerHTML='My family have inspired me and pushed me to be the best I can be throughout my life. Whether it was supporting my dreams to pushing me in baskebtall they have always been there and will continue to be. My family has been the biggest support system in my life and I truly would not be here without them.';
+    smIMG.src='src/IMG_8212.JPG'
   }
   return aboutClass
 })
@@ -152,12 +168,13 @@ function createCards() {
   const card2 = createCard('ABOUT ME');
   const card3 = createCard('PROJECTS');
   const card4 = createCard('CONTACT');
-
+  card2.classList.add('active')
   cards.push(card1, card2, card3, card4);
 
   card1.addEventListener("click",()=>{
     whiteCard.style.display = "none";
-    
+    body.style.backgroundColor='#9caf99'
+    contact.style.display='none';
     cardDiv.setAttribute("id", "");
     document.querySelectorAll('.card').forEach(card => card.remove());
         container.classList.remove('hidden-content'); // Show the main content again
@@ -167,6 +184,9 @@ function createCards() {
         });
 });
 card2.addEventListener("click",()=>{
+  card2.classList.add('active')
+  card3.classList.remove('active');
+  card4.classList.remove('active');
   whiteCard.style.display = "block";
   cardDiv.setAttribute("id", aboutClass);
   changeCard();
@@ -177,22 +197,26 @@ card2.addEventListener("click",()=>{
   head.style.display='block';
   desc.style.display='block';
   smIMG.style.display='block';
-  
+  contact.style.display='none';
   if (cardDiv.id==='about1'){
-    head.innerHTML="Jonathan Baker";
-    desc.innerHTML='I am 17 years old and I am currently going into my senior year at Castle High School. I love programming and my favorite languages include<br>  - Python<br>  - JavaScript<br>  - C++';
-    smIMG.src='src/IMG_5627.JPEG'
+    head.innerHTML="JONATHAN BAKER";
+    desc.innerHTML='I am 17 years old and I am currently going into my senior year at Castle High School. I love golf, basketball, and football. I also love programming and my favorite languages include<br>  - Python<br>  - JavaScript<br>  - C++';
+    smIMG.src='src/IMG_2449.jpg'
   }else if (cardDiv.id==='about2'){
-    head.innerHTML="";
-    desc.innerHTML='';
-    smIMG.src=''
+    head.innerHTML="INSPIRATION";
+    desc.innerHTML='I have grown to love computers and how they work. It all started when I was 6 years old and me and my brother got an Xbox 360. We were so excited and played it all the time. Through the years I knew I wanted to do something with math and computers. That is when I found out Castle had a CS 1 program and I fell in love with it immediately and knew that was my future.';
+    smIMG.src='src/IMG_8210.JPG'
   }else if (cardDiv.id==='about3'){
-    head.innerHTML="";
-    desc.innerHTML='';
-    smIMG.src=''
+    head.innerHTML="FAMILY";
+    desc.innerHTML='My family have inspired me and pushed me to be the best I can be throughout my life. Whether it was supporting my dreams to pushing me in baskebtall they have always been there and will continue to be. My family has been the biggest support system in my life and I truly would not be here without them.';
+    smIMG.src='src/IMG_8212.JPG'
   }
 })
 card3.addEventListener("click",()=>{
+  card3.classList.add('active')
+  card2.classList.remove('active');
+  card4.classList.remove('active');
+  cardDiv.setAttribute('class','cardDiv projects')
   whiteCard.style.display = "block";
   cardDiv.setAttribute("id", projectsClass);
   changeCard();
@@ -203,6 +227,7 @@ card3.addEventListener("click",()=>{
   head.style.display='block';
   desc.style.display='block';
   smIMG.style.display='block';
+  contact.style.display='none';
   if (cardDiv.id==='projects1'){
     head.innerHTML="";
     desc.innerHTML='';
@@ -218,6 +243,9 @@ card3.addEventListener("click",()=>{
   }
 });
 card4.addEventListener("click",()=>{
+  card4.classList.add('active')
+  card3.classList.remove('active');
+  card2.classList.remove('active');
   whiteCard.style.display = "block";
   cardDiv.setAttribute("id", "contact");
   changeCard();
@@ -228,6 +256,7 @@ card4.addEventListener("click",()=>{
   head.style.display='none';
   desc.style.display='none';
   smIMG.style.display='none';
+  contact.style.display='block';
 })
   return cards;
 }
